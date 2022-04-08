@@ -1,0 +1,11 @@
+Api Source:
+https://www.cve-search.org/api/
+
+Capec (Common Attack Pattern Enumeration and Classification): 
+https://capec.mitre.org/
+
+CWE (Common Weakness Enumeration):
+https://cwe.mitre.org/
+
+CVE (Common Vulnerabilities and Exposures):
+https://www.cve.org/
