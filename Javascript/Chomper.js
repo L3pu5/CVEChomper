@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 //
 //  CVEChomper
 //      By Lepus Hare. 
@@ -6,6 +7,29 @@
 
 const baseUrl = "https://cve.circl.lu/api/cve/";
 var CVE, CVESTRING;
+
+if(process.argv.length < 3){
+    console.log("Usage: [node] Chomper <CVE> <flags>");
+    console.log("    Flags");
+    console.log('     "M": "Modified"');
+    console.log('     "P": "Published"');
+    console.log('     "x": "access"');
+    console.log('     "a": "assigner"');
+    console.log('     "c": "capec"');
+    console.log('     "t": "cvss-time"');
+    console.log('     "v": "cvss-vector"');
+    console.log('     "C": "cwe"');
+    console.log('     "i": "id"');
+    console.log('     "I": "impact"');
+    console.log('     "l": "last-modified"');
+    console.log('     "r": "references"');
+    console.log('     "m": "refmap"');
+    console.log('     "u": "summary"');
+    console.log('     "p": "vulnerable_product"');
+    console.log('     "f": "vulnerable_configuration"');
+    process.exit(1);
+}
+
 
 if(process.argv[2].substring(0, 3) === "CVE"){
     CVE = process.argv[2];
@@ -68,6 +92,7 @@ for(var char in split){
 
 
 const https = require('https');
+const { exit } = require('process');
 https.get(baseUrl + CVE, _result => {
     var _responseData = '';
     _result.on('data', _data => {_responseData += _data;});
