@@ -5,8 +5,10 @@ This backs onto the following API and provides a wrapper for it:
     https://www.cve-search.org/api/
 
 ### Useage:
-    Chomper <CVE> <flags>
-
+```
+./Chomper <CVE> <flags>
+node Chomper <CVE> <flags>
+```
 #### Flags:
 
     "M": "Modified"
